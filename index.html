@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Computación gráfica</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Cómo una computadora convierte triángulos en imágenes: transformaciones, cámaras, rasterizado, color, sombreado, texturas, shaders en WebGL y WebGPU, trazado de rayos, curvas y animación, con un renderizador que se escribe desde cero en la página.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="index">
+<header class="topbar"><a class="brand" href="index.html">Computación <b>gráfica</b></a><span class="eyebrow">Curso visual e interactivo · Computación</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+
+<header class="hero">
+  <span class="eyebrow">Curso visual e interactivo · Computación</span>
+  <h1>Un renderizador escrito desde cero, línea por línea, frente a ti</h1>
+  <p class="lede">Un videojuego dibuja millones de triángulos sesenta veces por segundo y una película calcula la luz que rebota por toda la escena. Detrás hay unas pocas ideas: matrices que mueven puntos, una cámara que proyecta, un algoritmo que llena triángulos y una ecuación que reparte la luz. Este curso las escribe en código, una por capítulo, hasta tener un renderizador propio y después pasarlo a la GPU.</p>
+</header>
+
+<section>
+  <h2>Cómo usar este curso</h2>
+  <div class="prose">
+    <p><b>Estado.</b> El curso está en preparación. La <a href="temario.html">tabla de contenido</a> ya tiene los 13 capítulos con sus secciones y sus laboratorios, y está en revisión.</p>
+    <p><b>Para quién es.</b> Para estudiantes de computación y para programadores que quieren entender qué hace la tarjeta gráfica. Conviene saber programar en JavaScript (está en JavaScript) y manejar vectores y matrices: el repaso está en Mate para ML y la teoría completa en Álgebra lineal. La GPU como procesador paralelo de propósito general está en Computación paralela y GPU.</p>
+    <p><b>Cómo está hecho.</b> Un renderizador recorre el curso. Empieza pintando píxeles sueltos en un lienzo, aprende a mover y proyectar una tetera, a llenar triángulos con profundidad, a iluminarlos y texturizarlos; luego se pasa a WebGL y WebGPU, y termina trazando rayos con reflejos y luz indirecta. Cada capítulo tiene su código en la página, editable y con el resultado en vivo, y laboratorios donde mueves una luz, una cámara o un parámetro y ves la imagen cambiar.</p>
+  </div>
+</section>
+
+<details class="stage" id="temario" open><summary><h2><span class="pn">Empieza aquí</span> Tabla de contenido</h2></summary>
+  <div class="mods">
+    <a class="mod" href="temario.html"><span class="n">≡</span><b>Tabla de contenido</b><p>Cada capítulo con sus secciones y sus laboratorios.</p></a>
+  </div>
+</details>
+
+<details class="stage" id="parte-1" open><summary><h2><span class="pn">Parte 1</span> De la escena a la pantalla</h2><span class="cuenta" data-etapa-cuenta="1"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="pixeles-y-pipeline"><span class="n">01</span><b>Píxeles, imágenes y el *pipeline* gráfico</b><p>Qué es una imagen en memoria, las dos grandes formas de dibujar una escena y el renderizador que crece en el curso.</p></div>
+    <div class="mod soon" data-id="transformaciones"><span class="n">02</span><b>Transformaciones y coordenadas homogéneas</b><p>Trasladar, rotar y escalar con matrices, y el truco que convierte todo en multiplicaciones.</p></div>
+    <div class="mod soon" data-id="camaras-y-proyecciones"><span class="n">03</span><b>Cámaras, espacios de coordenadas y proyecciones</b><p>El viaje de un vértice por los espacios de modelo, mundo, vista, recorte y pantalla.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-2" open><summary><h2><span class="pn">Parte 2</span> Rasterizar e iluminar</h2><span class="cuenta" data-etapa-cuenta="2"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="rasterizado"><span class="n">04</span><b>Rasterizado, visibilidad y antialiasing</b><p>Convertir triángulos en píxeles, interpolar dentro de ellos y resolver qué está delante.</p></div>
+    <div class="mod soon" data-id="color-y-luz"><span class="n">05</span><b>Color y luz: del espectro al píxel</b><p>Qué es el color, cómo se mide la luz y por qué un píxel no guarda la luz tal cual.</p></div>
+    <div class="mod soon" data-id="sombreado"><span class="n">06</span><b>Sombreado e iluminación local</b><p>Lambert, Phong y Blinn-Phong: cómo se calcula el color de una superficie según la luz y el punto de vista.</p></div>
+    <div class="mod soon" data-id="texturas"><span class="n">07</span><b>Texturas y muestreo</b><p>Pegar imágenes sobre superficies sin que se vean pixeladas ni ruidosas.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-3" open><summary><h2><span class="pn">Parte 3</span> La GPU</h2><span class="cuenta" data-etapa-cuenta="3"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="shaders-webgl"><span class="n">08</span><b>*Shaders* en WebGL</b><p>Del renderizador en JavaScript a la GPU: buffers, programas de vértice y de fragmento en GLSL.</p></div>
+    <div class="mod soon" data-id="webgpu"><span class="n">09</span><b>WebGPU y el *pipeline* moderno</b><p>La API gráfica nueva de la web: *pipelines*, grupos de enlace, WGSL y pasadas de render.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-4" open><summary><h2><span class="pn">Parte 4</span> Luz realista</h2><span class="cuenta" data-etapa-cuenta="4"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="trazado-de-rayos"><span class="n">10</span><b>Trazado de rayos</b><p>Lanzar un rayo por cada píxel y seguirlo: intersecciones, sombras, reflejos y refracción.</p></div>
+    <div class="mod soon" data-id="iluminacion-global"><span class="n">11</span><b>Iluminación global y materiales físicos</b><p>La ecuación de renderizado de Kajiya, el trazado de caminos con Monte Carlo y los materiales PBR.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-5" open><summary><h2><span class="pn">Parte 5</span> Forma y movimiento</h2><span class="cuenta" data-etapa-cuenta="5"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="curvas-y-superficies"><span class="n">12</span><b>Curvas, superficies y mallas</b><p>Bézier, B-splines y NURBS: formas suaves controladas por unos pocos puntos.</p></div>
+    <div class="mod soon" data-id="animacion-y-fisica"><span class="n">13</span><b>Animación y física básica</b><p>Cuadros clave, esqueletos e integración numérica para que las cosas se muevan de forma creíble.</p></div>
+  </div>
+</details>
+
+
+
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/computacion-grafica" target="_blank" rel="noopener">github.com/aaramirez/computacion-grafica</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+</body>
+</html>
